@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "homepage": "https://c2eriku.github.io/vanillajs-demo-lib/",
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
