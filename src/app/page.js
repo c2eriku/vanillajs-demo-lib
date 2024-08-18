@@ -8,6 +8,9 @@ export default function Home() {
   const [isDrawerOpen, setDrawerOpen] = useState(true);
   const [iframeSrc, setIframeSrc] = useState('/examples.html');
 
+  const layout_collapse = 'w-1/4 transition-all ease-in-out'
+  const layout_extend = 'w-3/4 transition-all ease-in-out'
+
   function toggleDrawer() {
     setDrawerOpen(!isDrawerOpen);
   }
@@ -15,15 +18,15 @@ export default function Home() {
   return (
     <main className="flex min-h-screen">
 
-      <div className={`w-${isDrawerOpen ? '1/4' : '0 opacity-0'} transition-all ease-in-out`}>
+      <div className={`${isDrawerOpen ? 'w-1/4' : 'w-0 opacity-0'} transition-all ease-in-out`}>
         <SideNavigation
           setTitle={setTitle}
           setIframeSrc={setIframeSrc}
           toggleDrawer={toggleDrawer}></SideNavigation>
       </div>
 
-      <div className={`w-${isDrawerOpen ? '3/4' : 'full'} h-100 p-2 transition-all ease-in-out`}>
-        <BrowserEmuUI title={title} iframeSrc={iframeSrc}></BrowserEmuUI>
+      <div className={`${isDrawerOpen ? 'w-3/4' : 'w-full'} h-100 p-2 transition-all ease-in-out`}>
+        <BrowserEmuUI title={title} iframeSrc={iframeSrc} isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer}></BrowserEmuUI>
       </div>
 
     </main>

@@ -24,7 +24,7 @@ export default function SideNav({ setTitle, setIframeSrc, toggleDrawer }) {
     return (
         <div className={`w-full h-screen flex flex-col bg-gray-100 transition-all ease-in-out duration-1000`}>
             <div className="h-10 flex flex-row-reverse p-1 bg-gray-400">
-                <button className="px-1 bg-sky-100 rounded-lg" onClick={toggleDrawer}>
+                <button className="px-1 bg-sky-100 rounded-xl" onClick={toggleDrawer}>
                     <ChevronLeft></ChevronLeft>
                 </button>
             </div>
