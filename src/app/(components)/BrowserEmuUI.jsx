@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function BrowserEmuUI({ title, iframeSrc, isDrawerOpen, toggleDrawer }) {
+export function BrowserEmuUI({ title, basePath, iframeSrc, isDrawerOpen, toggleDrawer }) {
 
     function FuncBar({ title, toggleDrawer }) {
         return (
@@ -14,7 +14,7 @@ export function BrowserEmuUI({ title, iframeSrc, isDrawerOpen, toggleDrawer }) {
                     </div>
                     <div className="w-full h-full px-2 flex items-center bg-gray-100 rounded-t-lg">
                         <div className="relative w-4 h-4 mr-2">
-                            <Image src='/favicon.ico' layout="responsive" width={10} height={10} alt="icon"></Image>
+                            <Image src={`${basePath}/favicon.ico`} layout="responsive" width={10} height={10} alt="icon"></Image>
                         </div>
                         <div>{title}</div>
                     </div>

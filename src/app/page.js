@@ -10,10 +10,6 @@ export default function Home() {
   const [isDrawerOpen, setDrawerOpen] = useState(true);
   const [iframeSrc, setIframeSrc] = useState(`${nextConfig.basePath}/examples.html`);
 
-  function setIframeSrcWithBasePath(path) {
-    setIframeSrc(`${nextConfig.basePath}${path}`);
-  }
-
   function toggleDrawer() {
     setDrawerOpen(!isDrawerOpen);
   }
@@ -22,13 +18,19 @@ export default function Home() {
     <main className="flex min-h-screen">
       <div className={`${isDrawerOpen ? 'w-1/4' : 'w-0 opacity-0'} transition-all ease-in-out`}>
         <SideNavigation
+          basePath={nextConfig.basePath}
           setTitle={setTitle}
-          setIframeSrc={setIframeSrcWithBasePath}
+          setIframeSrc={setIframeSrc}
           toggleDrawer={toggleDrawer}></SideNavigation>
       </div>
 
       <div className={`${isDrawerOpen ? 'w-3/4' : 'w-full'} h-100 p-2 transition-all ease-in-out`}>
-        <BrowserEmuUI title={title} iframeSrc={iframeSrc} isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer}></BrowserEmuUI>
+        <BrowserEmuUI
+          title={title}
+          basePath={nextConfig.basePath}
+          iframeSrc={iframeSrc}
+          isDrawerOpen={isDrawerOpen}
+          toggleDrawer={toggleDrawer}></BrowserEmuUI>
       </div>
 
     </main>

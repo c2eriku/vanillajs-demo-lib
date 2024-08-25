@@ -2,7 +2,7 @@
 import { demoSourcePath } from "../demoSourcePath";
 
 
-export default function SideNav({ setTitle, setIframeSrc, toggleDrawer }) {
+export default function SideNav({ basePath, setTitle, setIframeSrc, toggleDrawer }) {
 
 
     function Item({ title, path }) {
@@ -10,7 +10,7 @@ export default function SideNav({ setTitle, setIframeSrc, toggleDrawer }) {
             className="text-left px-4 py-2 hover:bg-sky-600"
             onClick={() => {
                 setTitle(title);
-                setIframeSrc(path)
+                setIframeSrc(`${basePath}${path}`);
             }}>
             {title}
         </button>);
