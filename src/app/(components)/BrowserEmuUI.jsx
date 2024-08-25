@@ -30,7 +30,7 @@ export function BrowserEmuUI({ title, basePath, iframeSrc, isDrawerOpen, toggleD
     }
 
     return (
-        <div className="w-full h-full bg-white border-2">
+        <div className="w-full h-full bg-white border-2 overflow-hidden">
             <FuncBar title={title} toggleDrawer={toggleDrawer}></FuncBar>
             <iframe src={iframeSrc}
                 className="w-full h-full"></iframe>
