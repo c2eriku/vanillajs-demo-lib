@@ -2,14 +2,17 @@
 import { useState } from "react";
 import SideNavigation from "./(components)/SideNav";
 import { BrowserEmuUI } from "./(components)/BrowserEmuUI";
+import nextConfig from "../../next.config.mjs";
+
 
 export default function Home() {
-  const [title, setTitle] = useState('example');
+  const [title, setTitle] = useState('examples');
   const [isDrawerOpen, setDrawerOpen] = useState(true);
-  const [iframeSrc, setIframeSrc] = useState('/examples.html');
+  const [iframeSrc, setIframeSrc] = useState(`${nextConfig.basePath}/examples.html`);
 
-  const layout_collapse = 'w-1/4 transition-all ease-in-out'
-  const layout_extend = 'w-3/4 transition-all ease-in-out'
+  function setIframeSrcWithBasePath(path) {
+    setIframeSrc(`${nextConfig.basePath}${path}`);
+  }
 
   function toggleDrawer() {
     setDrawerOpen(!isDrawerOpen);
@@ -17,11 +20,10 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen">
-
       <div className={`${isDrawerOpen ? 'w-1/4' : 'w-0 opacity-0'} transition-all ease-in-out`}>
         <SideNavigation
           setTitle={setTitle}
-          setIframeSrc={setIframeSrc}
+          setIframeSrc={setIframeSrcWithBasePath}
           toggleDrawer={toggleDrawer}></SideNavigation>
       </div>
 
