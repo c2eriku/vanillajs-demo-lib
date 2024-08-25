@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>README.md</title>
+</head>
+
+<body style="background-color: #1e1e1e;">
+    <pre style="font-size: 20px; color: #d4d4d4; padding: 1rem">
+This is a [Next.js](https://nextjs.org/) project bootstrapped with
+[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Getting Started (開啟local環境方式)
+First, run the development server:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 添加新的vanilla.js實例
+以下將說明如何在本專案中建立新的demo項目。
+### 1. 直接撰寫html文件
+請愉快的加入您的vanilla.js實例透過直接撰寫html文件，
+撰寫結構大致可以遵循`public`資料夾的樣式：
+```
+public
+├ (folder) css
+├ (folder) javascript
+└ html files
+```
+🔴IMPORTANT🔴在任何需要指定src路徑的情況，請務必使用https或是相對路徑取得，否則將取得不到該資源。
+### 2. 設定路由
+在`demoSourcePath.js`中加入您製作的實例名稱與路徑。
+|屬性|說明|
+|---|---|
+|title|模擬視窗的分頁名稱|
+|path|實例的實際路徑(毋須思考基底路徑問題)|
+### 3. 部署
+請直接將異動commit並push至github repository，github actions即觸發自動程序進行部署。
+    </pre>
+</body>
+
+</html>

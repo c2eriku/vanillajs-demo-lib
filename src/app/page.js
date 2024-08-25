@@ -6,9 +6,9 @@ import nextConfig from "../../next.config.mjs";
 
 
 export default function Home() {
-  const [title, setTitle] = useState('examples');
+  const [title, setTitle] = useState('Getting Started');
   const [isDrawerOpen, setDrawerOpen] = useState(true);
-  const [iframeSrc, setIframeSrc] = useState(`${nextConfig.basePath}/examples.html`);
+  const [iframeSrc, setIframeSrc] = useState(`${nextConfig.basePath}/getting-started.html`);
 
   function toggleDrawer() {
     setDrawerOpen(!isDrawerOpen);
